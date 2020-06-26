@@ -1,7 +1,5 @@
 PP_: Proyecto Pequeño
 
-  *semaforo
-
   *calculadora-simple
   
   *generador-de-figuras-aleatorias
