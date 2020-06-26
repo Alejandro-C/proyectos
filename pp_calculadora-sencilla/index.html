@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora-sncilla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="display">
+            <input disabled type="text" id="operacionDisplay">
+            <input type="button" value="C" class="boton naranja" id="C">
+        </div>
+
+        <div class="contenedor-botones">
+            <div class="barra">
+                <input type="button" value="7" class="boton" id="7" onclick="addCaracter(this.value);">
+                <input type="button" value="8" class="boton" id="8" onclick="addCaracter(this.value);">
+                <input type="button" value="9" class="boton" id="9" onclick="addCaracter(this.value);">
+                <input type="button" value="+" class="boton gris" id="+" onclick="addCaracter(this.value);">
+            </div>
+
+            <div class="barra">
+                <input type="button" value="4" class="boton" id="4" onclick="addCaracter(this.value);">
+                <input type="button" value="5" class="boton" id="5" onclick="addCaracter(this.value);">
+                <input type="button" value="6" class="boton" id="6" onclick="addCaracter(this.value);">
+                <input type="button" value="-" class="boton gris" id="-" onclick="addCaracter(this.value);">
+            </div>
+
+            <div class="barra">
+                <input type="button" value="1" class="boton" id="1" onclick="addCaracter(this.value);">
+                <input type="button" value="2" class="boton" id="2" onclick="addCaracter(this.value);">
+                <input type="button" value="3" class="boton" id="3" onclick="addCaracter(this.value);">
+                <input type="button" value="*" class="boton gris" id="*" onclick="addCaracter(this.value);">
+            </div>
+
+            <div class="barra">
+                <input type="button" value="." class="boton" id="." onclick="addCaracter(this.value);">
+                <input type="button" value="0" class="boton" id="0" onclick="addCaracter(this.value);">
+                <input type="button" value="=" class="boton naranja" id="=">
+                <input type="button" value="/" class="boton gris" id="/" onclick="addCaracter(this.value);">
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
