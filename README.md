@@ -1,12 +1,19 @@
 PP_: Proyecto Pequeño
+
   *semaforo
 
   *calculadora-simple
+  
   *generador-de-figuras-aleatorias
+  
   *cambiar-de-color-un-cuadro
+  
   *guardar-un-color-de-fondo-a-un-cuadro
+  
   *ocultar/mostrar-contenido
+  
   *crear-una-nueva-fila-a-una-tabla-y-poder-colorearla
+  
   *adivina-el-numero
   
   
