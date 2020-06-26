@@ -1,6 +1,4 @@
 PP_: Proyecto Pequeño
-
-  *calculadora-simple
   
   *generador-de-figuras-aleatorias
   
