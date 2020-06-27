@@ -1,7 +1,5 @@
 PP_: Proyecto Pequeño
   
-  *generador-de-figuras-aleatorias
-  
   *cambiar-de-color-un-cuadro
   
   *guardar-un-color-de-fondo-a-un-cuadro
