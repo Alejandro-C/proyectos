@@ -1,7 +1,5 @@
 PP_: Proyecto Pequeño
   
-  *cambiar-de-color-un-cuadro
-  
   *recordar-un-color-(localStorage)
   
   *crear-una-nueva-fila-a-una-tabla-y-poder-colorearla
