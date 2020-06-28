@@ -18,4 +18,4 @@ PM_: Proyecto Mediano
   *juego-tres-en-raya
   
   
-PG_: Protecto Graande
+PG_: Protecto Grande
