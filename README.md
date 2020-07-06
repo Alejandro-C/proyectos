@@ -1,7 +1,5 @@
 PP_: Proyecto Pequeño
   
-  *cambiar-de-color-un-cuadro
-  
   *recordar-un-color-(localStorage)
   
   *crear-una-nueva-fila-a-una-tabla-y-poder-colorearla
@@ -20,4 +18,4 @@ PM_: Proyecto Mediano
   *juego-tres-en-raya
   
   
-PG_: Protecto Graande
+PG_: Protecto Grande
