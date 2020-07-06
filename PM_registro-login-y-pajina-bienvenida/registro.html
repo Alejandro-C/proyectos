@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="contenedor-registro">
+        <header>
+            <h1>Registro</h1>
+        </header>
+
+        <form action="#" id="formRegistro">
+            <div class="barra">
+                <input type="text" name="nombres" class="input-text" id="nombres" placeholder="nombre" required maxlength="50">
+                <input type="text" name="apellidos" class="input-text" id="apellidos" placeholder="apellido" required maxlength="50">
+            </div>
+            <!-- barra -->
+
+            <div class="input">
+                <input type="email" name="email" class="input-text" id="email" placeholder="email" required>
+            </div>
+
+            <div class="barra">
+                <input type="password" name="password" class="input-text" id="password" placeholder="contraseña" required maxlength="8">
+                <input type="password" name="repetirPassword" class="input-text" id="password2" placeholder="repetir contraseña" required maxlength="8">
+            </div>
+            <!-- barra -->
+
+            <div class="contenedor-input-radio">
+                <label for="sexo">sexo:</label>
+
+                <div class="inputs-radio">
+                    <div class="input-radio">
+                        <input type="radio" name="sexo" id="mujer" value="mujer"> <label for="mujer">mujer</label>
+                    </div>
+
+                    <div class="input-radio">
+                        <input type="radio" name="sexo" id="hombre" value="hombre"> <label for="hombre">hombre</label>
+                    </div>
+
+                    <div class="input-radio">
+                        <input type="radio" name="sexo" id="otro" value="otro"> <label for="otro">otro</label>
+                    </div>
+                </div>
+            </div>
+            <!-- input radio -->
+
+            <div class="barra">
+                <div class="select">
+                    <label for="pais">Paises:</label>
+
+                    <select name="pais" id="pais" onchange="paisSeleccionado(this.value)">
+                            <option value="0" selected='selected' disabled='disabled'>Seleccionar...</option>
+                            <option value="argentina">Argentina</option>
+                            <option value="brasil">Brasil</option>
+                            <option value="colombia">Colombia</option>
+                            <option value="mexico">Mexico</option>
+                        </select>
+                </div>
+
+                <div class="select">
+                    <label for="ciudad">Ciudades:</label>
+
+                    <select name="ciudad" id="ciudad">
+                            <option value="0" selected='selected' disabled='disabled'>Seleccionar...</option>
+                        </select>
+                </div>
+            </div>
+            <!-- barra -->
+
+            <div class="input">
+                <input type="text" name="direccion" class="input-text" id="direccion" placeholder="dirección" maxlength="50">
+            </div>
+
+            <div class="boton">
+                <input type="submit" value="Registrarse" id="registro">
+            </div>
+        </form>
+        <!-- formulario -->
+
+        <footer>
+            <p>ya tengo una cuenta <a href="login.html">ir al login</a></p>
+        </footer>
+    </div>
+    <!-- contenedor registro -->
+
+    <script src="js/registro.js"></script>
+</body>
+
+</html>

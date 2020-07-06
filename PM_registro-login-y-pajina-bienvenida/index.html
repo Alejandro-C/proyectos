@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="contenedor">
+            <div class="contenedor-header">
+                <header>
+                    <div class="titulo">
+                        <h1>Registro, Login <br> y Pagina de Bienvenida</h1>
+                    </div>
+
+                    <div class="nav">
+                        <nav>
+                            <a href="registro.html">pagina de registro</a><br>
+                            <a href="login.html">Pagina de Iniciar sesión</a><br>
+                            <a href="bienvenida.html">pagina de bienvanida</a>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+
+            <main>
+                <section>
+                    <h2>Requerimientos Genarales</h2>
+
+                    <ul>
+                        <li>El sistema permite el registro de múltiples usuarios y el guardado de los mismos en la memoria del navegador (LocalStorage).</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Pagína de inicio de sesión</h2>
+
+                    <ul>
+                        <li>EL sistema valida el inicio de sesión por correo electrónico y contraseña.</li>
+                        <li>Con 3 intentos fallidos el sistema se deshabilita durante 30 segundos.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Pagína de Registro</h2>
+
+                    <ul>
+                        <li>El formulario de registro lleva los siguientes campos:</li>
+
+                        <table>
+                            <thead>
+                                <th>Campo</th>
+                                <th>Tipo</th>
+                                <th>Validación</th>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Nombres<i>*</i></td>
+                                    <td>Input-text</td>
+                                    <td>Max 50 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Apellidos<i>*</i></td>
+                                    <td>Input-text</td>
+                                    <td>Max 50 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Correo electrónico<i>*</i></td>
+                                    <td>Input-email</td>
+                                    <td>Solo tipo email</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sexo</td>
+                                    <td>Input-radio</td>
+                                    <td></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Dirección</td>
+                                    <td>Input-text</td>
+                                    <td>Max 100 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Pais<i>*</i></td>
+                                    <td>Select</td>
+                                    <td>Min 4 opciones</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Ciudad<i>*</i></td>
+                                    <td>Select</td>
+                                    <td>Min 4 opciones</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Contraseña<i>*</i></td>
+                                    <td>Input-password</td>
+                                    <td>Max 8 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Repetir Contraseña<i>*</i></td>
+                                    <td>Input-password</td>
+                                    <td>Max 8 caracteres</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <li>El sistema valida el correo electrónico, solo permite correos validos.</li>
+                        <li>En el campo de país usa el evento onChange para la consulta de las ciudades correspondientes.</li>
+                        <li>
+                            Las ciudades y los países son datos estáticos, se registro 4 paises y 4 ciudades por cada uno. En el campo ciudad solo se muestra las ciudades correspondientes al país seleccionado si el campo de país cambia el campo ciudad se actuliza con las ciudades
+                            correspondientes.
+                        </li>
+                        <li>
+                            El sistema valida el uso de la contraseña, ambos campos de contraseña deben tener el mimo valor, si las contraseñas no coinciden se mostrara un alert.
+                        </li>
+                        <li>El sistema valida el email del usuario que se esta registrando para evitar usuarios con el mismo correo electrónico.</li>
+                        <li>Si todas las validaciones se cumplen el sistema guarda el registro de lo contrario no.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Pagína de Bienvenida</h2>
+
+                    <ul>
+                        <li>El sistema mostrara los datos del usuario.</li>
+                        <li>Se puede modificar los datos del usuario que ha iniciado sesión</li>
+                        <li>Estaran todos los usuarios registrados.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <nav>
+                <a href="registro.html">pagina de registro</a><br>
+                <a href="login.html">Pagina de Iniciar sesión</a><br>
+                <a href="bienvenida.html">pagina de bienvanida</a>
+            </nav>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="contenedor-registro contenedor-login">
+        <header>
+            <h1>Login</h1>
+        </header>
+
+        <form action="#" id="formLogin">
+            <div class="input">
+                <input type="email" name="email" class="input-text" id="email" placeholder="email" required>
+            </div>
+
+            <div class="input">
+                <input type="password" name="password" class="input-text" id="password" placeholder="contraseña" required maxlength="8">
+            </div>
+
+            <div class="barra">
+                <div class="input">
+                    <input type="checkbox" name="recordar" id="recordar"> <label for="recordar">Recordar</label>
+                </div>
+
+                <a href="#" class="text-verde" onclick="alert('Mira el localStorage');">olvide la contraseña?</a>
+            </div>
+
+            <div class="boton">
+                <input type="submit" value="ingresar">
+            </div>
+        </form>
+
+        <footer>
+            <p>¿No estas registrado? Para registrarse has click <a href="registro.html">aquí</a></p>
+        </footer>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>
