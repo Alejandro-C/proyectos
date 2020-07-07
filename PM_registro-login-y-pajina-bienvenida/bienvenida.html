@@ -5,14 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina Principal</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles2.css">
 </head>
 
 <body>
-    <h1>HOLA!!!...</h1>
+    <div class="container">
+        <header>
+            <div class="cerrar-sesion">
+                <input type="button" value="cerrar sesion">
+            </div>
 
-    <a href="registro.html">Registro</a>
-    <a href="login.html">Login</a>
+            <div class="titulo">
+                <h1>Hola! <br> Bienvenido <span id="spanNombre">Alguien</span></h1>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <header>
+                    <h2>Datos Pesonales</h2>
+                </header>
+
+                <form action="#" id="datosPesonales">
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="nombres">Nombres:</label>
+                            <input disabled type="text" name="nombres" id="nombres">
+                        </div>
+
+                        <div class="entrada">
+                            <label for="apellidos">Apellidos:</label>
+                            <input disabled type="text" name="apellidos" id="apellidos">
+                        </div>
+                    </div>
+
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="email">Email:</label>
+                            <input disabled type="email" name="email" id="email">
+                        </div>
+
+                        <div class="entrada">
+                            <label for="sexo">Sexo:</label>
+                            <input disabled type="text" name="sexo" id="sexo">
+                        </div>
+                    </div>
+
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="pais">Pais:</label>
+                            <input disabled type="text" name="pais" id="pais">
+                        </div>
+
+                        <div class="enntrada">
+                            <label for="ciudad">Ciudad:</label>
+                            <input disabled type="text" name="ciudad" id="ciudad">
+                        </div>
+                    </div>
+
+                    <div class="entrada">
+                        <label for="direccion">Dirección:</label>
+                        <input disabled type="text" name="direccion" id="direccion">
+                    </div>
+                </form>
+            </section>
+
+            <section>
+                <header>
+                    <h2>Usuarios Registrados</h2>
+                </header>
+
+                <table>
+                    <thead>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Pais</th>
+                        <th>Ciudad</th>
+                    </thead>
+
+                    <tbody id="tbody"></tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/inicio.js"></script>
 </body>
 
 </html>
