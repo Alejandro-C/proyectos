@@ -28,8 +28,26 @@ document.getElementById('formLogin').addEventListener('submit', (e) => {
 });
 
 function deshablitarPantalla() {
+    document.getElementById('display1').style.display = 'none';
+    document.getElementById('display2').style.display = 'block';
     recordarSecion = 0;
-    console.log('pantalla deshabilitada');
+
+    temporizador();
+}
+
+function temporizador() {
+    let contador = 10;
+    let intervalo = setInterval(segundos, 1000);
+
+    function segundos() {
+        document.getElementById("segundos").innerHTML = contador;
+        --contador;
+
+        if (contador < 0) {
+            clearInterval(intervalo);
+            location.href = 'login.html';
+        }
+    }
 }
 
 function existeUsuario(email, password) {

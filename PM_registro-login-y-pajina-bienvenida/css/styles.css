@@ -225,7 +225,7 @@ div.contenedor div.contenedor-header {
     background-attachment: fixed;
 }
 
-header {
+header.header {
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
     position: relative;
@@ -304,4 +304,27 @@ div.contenedor nav a {
 
 div.contenedor nav a:hover {
     background-color: #2aad3c;
+}
+
+div#display2 {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#display2 p {
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+div#display2 span {
+    margin-top: 50px;
+    font-size: 70px;
+    color: #2aad3c;
+}
+
+div#display2 {
+    display: none;
 }
