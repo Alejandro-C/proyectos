@@ -9,23 +9,23 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="cerrar-sesion">
-                <input type="button" value="cerrar sesion">
-            </div>
+    <header>
+        <div class="cerrar-sesion">
+            <input type="button" class="boton" value="cerrar sesion">
+        </div>
 
-            <div class="titulo">
-                <h1>Hola! <br> Bienvenido <span id="spanNombre">Alguien</span></h1>
-            </div>
-        </header>
+        <div class="titulo">
+            <h1>Hola! <br> Bienvenido <span id="spanNombre">Humano</span></h1>
+        </div>
+    </header>
 
-        <main>
-            <section>
-                <header>
-                    <h2>Datos Pesonales</h2>
-                </header>
+    <main>
+        <section>
+            <header>
+                <h2>Datos Pesonales</h2>
+            </header>
 
+            <div class="container">
                 <form action="#" id="datosPesonales">
                     <div class="barra">
                         <div class="entrada">
@@ -67,14 +67,21 @@
                         <label for="direccion">Dirección:</label>
                         <input disabled type="text" name="direccion" id="direccion">
                     </div>
+
+                    <div class="botones">
+                        <input type="button" value="editar información">
+                        <input type="button" value="guardar información">
+                    </div>
                 </form>
-            </section>
+            </div>
+        </section>
 
-            <section>
-                <header>
-                    <h2>Usuarios Registrados</h2>
-                </header>
+        <section>
+            <header>
+                <h2>Usuarios Registrados</h2>
+            </header>
 
+            <div class="container">
                 <table>
                     <thead>
                         <th>Nombre</th>
@@ -85,9 +92,9 @@
 
                     <tbody id="tbody"></tbody>
                 </table>
-            </section>
-        </main>
-    </div>
+            </div>
+        </section>
+    </main>
 
     <script src="js/inicio.js"></script>
 </body>
