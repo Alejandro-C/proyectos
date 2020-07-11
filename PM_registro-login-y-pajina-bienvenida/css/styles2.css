@@ -85,3 +85,136 @@ section header h2 {
     text-align: center;
     font-weight: normal;
 }
+
+section div.container form {
+    width: 95%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.input-text {
+    padding: 2px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    background: none;
+    border-bottom: 1px solid #2aad3c;
+}
+
+form div.barra {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+form div.barra div.entrada {
+    width: 50%;
+    margin-right: 5px;
+}
+
+form div.barra div.entrada:last-of-type {
+    margin-right: 0;
+}
+
+div.barra div.entrada {
+    display: flex;
+    align-items: center;
+}
+
+div.barra div.entrada .input-text {
+    width: 100%;
+}
+
+div.barra div.entrada .input-mediano {
+    width: 70%;
+}
+
+div.contenedor-input-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+div.contenedor-input-radio label {
+    margin-right: 5px;
+}
+
+div.contenedor-input-radio div.inputs-radio {
+    display: flex;
+}
+
+div.contenedor-input-radio div.inputs-radio input {
+    display: none;
+}
+
+div.contenedor-input-radio div.inputs-radio label {
+    color: #2aad3c;
+    padding: 3px 15px 3px 30px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+div.contenedor-input-radio div.inputs-radio label::before {
+    content: '';
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    border: 3px solid #2aad3c;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 4px;
+}
+
+div.contenedor-input-radio div.inputs-radio input:checked+label {
+    padding: 3px 5px;
+    background-color: #2aad3c;
+    color: #ffffff;
+}
+
+div.inputs-radio input:checked+label::before {
+    display: none;
+}
+
+form div.botones {
+    text-align: end;
+    margin-top: 10px;
+}
+
+form div.botones input.boton {
+    padding: 10px;
+}
+
+
+/* tabla */
+
+div.contenedor-tabla {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+div.contenedor-tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+div.contenedor-tabla table th,
+div.contenedor-tabla table td {
+    padding: 8px;
+}
+
+div.contenedor-tabla table th {
+    background-color: #2aad3c;
+    color: #ffffff;
+}
+
+div.contenedor-tabla table td {
+    text-align: left;
+}
+
+div.contenedor-tabla table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

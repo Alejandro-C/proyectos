@@ -30,47 +30,133 @@
                     <div class="barra">
                         <div class="entrada">
                             <label for="nombres">Nombres:</label>
-                            <input disabled type="text" name="nombres" id="nombres">
+                            <input disabled type="text" name="nombres" class="input-text" id="nombres">
                         </div>
 
                         <div class="entrada">
                             <label for="apellidos">Apellidos:</label>
-                            <input disabled type="text" name="apellidos" id="apellidos">
+                            <input disabled type="text" name="apellidos" class="input-text" id="apellidos">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="email">Email:</label>
-                            <input disabled type="email" name="email" id="email">
+                            <input disabled type="email" name="email" class="input-text" id="email">
                         </div>
 
                         <div class="entrada">
                             <label for="sexo">Sexo:</label>
-                            <input disabled type="text" name="sexo" id="sexo">
+                            <input disabled type="text" name="sexo" class="input-text" id="sexo">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="pais">Pais:</label>
-                            <input disabled type="text" name="pais" id="pais">
+                            <input disabled type="text" name="pais" class="input-text" id="pais">
                         </div>
 
-                        <div class="enntrada">
+                        <div class="entrada">
                             <label for="ciudad">Ciudad:</label>
-                            <input disabled type="text" name="ciudad" id="ciudad">
+                            <input disabled type="text" name="ciudad" class="input-text" id="ciudad">
                         </div>
                     </div>
 
-                    <div class="entrada">
-                        <label for="direccion">Dirección:</label>
-                        <input disabled type="text" name="direccion" id="direccion">
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="direccion">Dirección:</label>
+                            <input disabled type="text" name="direccion" class="input-text" id="direccion">
+                        </div>
                     </div>
 
                     <div class="botones">
-                        <input type="button" value="editar información">
-                        <input type="button" value="guardar información">
+                        <input type="button" class="boton" id="btnEditarInformacion" value="editar información">
+                    </div>
+                </form>
+
+                <form action="#" id="nuevosDatosPersonales">
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="nombres">Nombres:</label>
+                            <input type="text" name="nombres" class="input-text" id="nombres">
+                        </div>
+
+                        <div class="entrada">
+                            <label for="apellidos">Apellidos:</label>
+                            <input type="text" name="apellidos" class="input-text" id="apellidos">
+                        </div>
+                    </div>
+
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" class="input-text" id="email">
+                        </div>
+                    </div>
+
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="password">Nueva Contraseña:</label>
+                            <input type="password" name="password" class="input-text input-mediano" id="password">
+                        </div>
+
+                        <div class="entrada">
+                            <label for="password2">Repetir Contraseña:</label>
+                            <input type="password" name="password2" class="input-text input-mediano" id="password2">
+                        </div>
+                    </div>
+
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="direccion">Dirección:</label>
+                            <input type="text" name="direccion" class="input-text" id="direccion">
+                        </div>
+                    </div>
+
+                    <div class="contenedor-input-radio">
+                        <label for="sexo">sexo:</label>
+
+                        <div class="inputs-radio">
+                            <div class="input-radio">
+                                <input type="radio" name="sexo" id="mujer" value="mujer"> <label for="mujer">mujer</label>
+                            </div>
+
+                            <div class="input-radio">
+                                <input type="radio" name="sexo" id="hombre" value="hombre"> <label for="hombre">hombre</label>
+                            </div>
+
+                            <div class="input-radio">
+                                <input type="radio" name="sexo" id="otro" value="otro"> <label for="otro">otro</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="barra">
+                        <div class="entrada">
+                            <label for="pais">Pais:</label>
+
+                            <select name="pais" id="pais" onchange="paisSeleccionado(this.value)" class="input-text">
+                                <option value="0" selected='selected' disabled='disabled'>Seleccionar...</option>
+                                <option value="argentina">Argentina</option>
+                                <option value="brasil">Brasil</option>
+                                <option value="colombia">Colombia</option>
+                                <option value="mexico">Mexico</option>
+                            </select>
+                        </div>
+
+                        <div class="entrada">
+                            <label for="ciudad">Ciudades:</label>
+
+                            <select name="ciudad" id="ciudad" class="input-text">
+                                <option value="0" selected='selected' disabled='disabled'>Seleccionar...</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="botones">
+                        <input type="button" class="boton" id="btnCancelar" value="cancelar">
+                        <input type="submit" class="boton" id="btnGuardarInformacion" value="guardar información">
                     </div>
                 </form>
             </div>
@@ -82,17 +168,21 @@
             </header>
 
             <div class="container">
-                <table>
-                    <thead>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Pais</th>
-                        <th>Ciudad</th>
-                    </thead>
+                <div class="contenedor-tabla">
+                    <table>
+                        <thead>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Pais</th>
+                            <th>Ciudad</th>
+                        </thead>
 
-                    <tbody id="tbody"></tbody>
-                </table>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+                <!-- contenedor tabla -->
             </div>
+            <!-- container -->
         </section>
     </main>
 
