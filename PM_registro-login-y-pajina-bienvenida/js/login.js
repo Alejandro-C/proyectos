@@ -1,4 +1,4 @@
-let intendosLogearse = 0;
+let intentosLogearse = 0;
 let recordarSecion = false;
 let idUsuarioIngresado;
 
@@ -13,7 +13,7 @@ document.getElementById('formLogin').addEventListener('submit', (e) => {
     e.preventDefault();
 
     // condiciones globales
-    recordarSecion == 2 ? deshablitarPantalla() : recordarSecion++;
+    intentosLogearse == 2 ? deshablitarPantalla() : intentosLogearse++;
     if (!localStorage.getItem('usuarios')) return alert('No estas registrado');
 
     let usuario = Object.fromEntries(new FormData(document.getElementById('formLogin'))); //obtenemos los datos del formulario login

@@ -9,10 +9,9 @@
 </head>
 
 <body>
-    <!-- hearder -->
     <header>
         <div class="cerrar-sesion">
-            <input type="button" class="boton" value="cerrar sesion">
+            <input type="button" class="boton" id="cerrarSesion" value="cerrar sesion">
         </div>
 
         <div class="titulo">
@@ -76,35 +75,35 @@
                     </div>
                 </form>
 
-                <form action="#" id="nuevosDatosPersonales">
+                <form action="#" id="nuevosDatosPersonales" style="display: none;">
                     <div class="barra">
                         <div class="entrada">
                             <label for="nombres">Nombres:</label>
-                            <input type="text" name="nombres" class="input-text" id="nuevosNombres">
+                            <input required type="text" name="nombres" class="input-text" id="nuevosNombres">
                         </div>
 
                         <div class="entrada">
                             <label for="apellidos">Apellidos:</label>
-                            <input type="text" name="apellidos" class="input-text" id="nuevosApellidos">
+                            <input required type="text" name="apellidos" class="input-text" id="nuevosApellidos">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="email">Email:</label>
-                            <input type="email" name="email" class="input-text" id="nuevoEmail">
+                            <input required type="email" name="email" class="input-text" id="nuevoEmail">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="password">Nueva Contraseña:</label>
-                            <input type="password" name="password" class="input-text input-mediano" id="nuevoPassword">
+                            <input required type="password" name="password" class="input-text input-mediano" id="nuevoPassword">
                         </div>
 
                         <div class="entrada">
                             <label for="password2">Repetir Contraseña:</label>
-                            <input type="password" name="password2" class="input-text input-mediano" id="nevoPassword2">
+                            <input required type="password" name="repetirPassword" class="input-text input-mediano" id="nevoPassword2">
                         </div>
                     </div>
 
@@ -156,7 +155,7 @@
                     </div>
 
                     <div class="botones">
-                        <input type="button" class="boton" id="btnCancelar" value="cancelar">
+                        <input type="button" class="boton" id="btnCancelar" value="cancelar" onclick="location.href='bienvenida.html'">
                         <input type="submit" class="boton" id="btnGuardarInformacion" value="guardar información">
                     </div>
                 </form>

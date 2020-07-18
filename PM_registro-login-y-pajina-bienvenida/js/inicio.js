@@ -24,7 +24,6 @@ document.getElementById(usuarioIngresado.sexo).setAttribute('checked', true);
 
 // colocando los usuarios registrados en la tabla
 for (let i = 0; i < usuariosRegistrados.length; i++) {
-    //creando la fila
     let tr = document.createElement('tr');
 
     // creando las columnas
@@ -48,3 +47,13 @@ for (let i = 0; i < usuariosRegistrados.length; i++) {
     // ponemos la fila en la tabla
     document.getElementById('tbody').appendChild(tr);
 }
+
+document.getElementById('cerrarSesion').addEventListener('click', () => {
+    localStorage.setItem('recordar', JSON.stringify(false));
+    location.href = 'login.html';
+});
+
+document.getElementById('btnEditarInformacion').addEventListener('click', () => {
+    document.getElementById('datosPesonales').style.display = 'none';
+    document.getElementById('nuevosDatosPersonales').style.display = 'block';
+});

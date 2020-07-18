@@ -1,6 +1,12 @@
 var idFormulario = 'formRegistro';
+var editandoDatos = false;
 
-if (document.getElementById('nuevosDatosPersonales')) idFormulario = 'nuevosDatosPersonales';
+// si existe este elemento es por que estamos en la pagina de bievanida
+if (document.getElementById('nuevosDatosPersonales')) {
+    var idUsuarioIngresado = JSON.parse(localStorage.getItem('idUsuarioIngresado'));
+    idFormulario = 'nuevosDatosPersonales';
+    editandoDatos = true;
+}
 
 document.getElementById(idFormulario).addEventListener('submit', (e) => {
     e.preventDefault();
@@ -13,12 +19,14 @@ document.getElementById(idFormulario).addEventListener('submit', (e) => {
 
     if (localStorage.getItem('usuarios')) {
         usuarios = JSON.parse(localStorage.getItem('usuarios'));
+        console.log('antes');
+        console.log(usuarios[idUsuarioIngresado]);
         id = usuarios.length;
 
         if (validarEmail(usuario.email, usuarios)) return;
     }
 
-    usuario.id = id;
+    editandoDatos ? usuario.id = idUsuarioIngresado : usuario.id = id;
 
     // validando campos
     if (usuario.password != usuario.repetirPassword) return alert('Las contrañas no coinciden');
@@ -27,17 +35,29 @@ document.getElementById(idFormulario).addEventListener('submit', (e) => {
     if (!usuario.ciudad) return alert('El campo ciudad es obligatorio');
     if (!usuario.direccion) usuario.direccion = 'vacio';
 
-    usuarios.push(usuario);
+    if (!editandoDatos) {
+        usuarios.push(usuario);
 
-    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-    alert('El registro sea guarado');
+        alert('El registro sea guarado');
 
-    location.href = 'login.html';
+        location.href = 'login.html';
+    } else {
+        usuarios[idUsuarioIngresado] = usuario;
+
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        alert('Los datos de han actualizado');
+
+        location.href = 'bienvenida.html';
+    }
 });
 
 function validarEmail(email, registros) {
     for (let i = 0; i < registros.length; i++) {
+        if (editandoDatos && registros[i].email == email) continue;
+
         if (registros[i].email == email) {
             alert('El email ya esta registrado');
             return true;
@@ -53,15 +73,19 @@ function paisSeleccionado(pais) {
     let ciudadesBrasil = ["Rio de Janeiro", "São Paulo", "Fortaleza", "Natal"];
     let ciudadesMexico = ["Ciudad de Mexico", "Guadalajara", "Monterrey", "Cancún"];
 
-    if (pais == 'argentina') crearCiudades(ciudadesArgentina);
-    if (pais == 'brasil') crearCiudades(ciudadesBrasil);
-    if (pais == 'colombia') crearCiudades(ciudadesColombia);
-    if (pais == 'mexico') crearCiudades(ciudadesMexico);
+    if (pais == 'Argentina') crearCiudades(ciudadesArgentina);
+    if (pais == 'Brasil') crearCiudades(ciudadesBrasil);
+    if (pais == 'Colombia') crearCiudades(ciudadesColombia);
+    if (pais == 'Mexico') crearCiudades(ciudadesMexico);
 }
 
 function crearCiudades(ciudades) {
+    let selectCiudad = 'ciudad';
+
+    if (editandoDatos) selectCiudad = 'nuevaCiudad';
+
     //reseteando el campo select de ciudad
-    if (document.getElementById('ciudad').length > 1) eliminarCiudades();
+    if (document.getElementById(selectCiudad).length > 1) eliminarCiudades();
 
     // creando las opciones
     for (let i = 0; i < ciudades.length; i++) {
@@ -70,12 +94,16 @@ function crearCiudades(ciudades) {
         opcion.setAttribute('value', `${ciudades[i]}`); //le añadimos el valor
         opcion.appendChild(document.createTextNode(`${ciudades[i]}`)); //nombre que se ve en las opciones
 
-        document.getElementById('ciudad').appendChild(opcion); //el elemento creado lo ponemos dentro del select
+        document.getElementById(selectCiudad).appendChild(opcion); //el elemento creado lo ponemos dentro del select
     }
 }
 
 function eliminarCiudades() {
-    let select = document.getElementById('ciudad');
+    let selectCiudad = 'ciudad';
+
+    if (editandoDatos) selectCiudad = 'nuevaCiudad';
+
+    let select = document.getElementById(selectCiudad);
 
     //reseteamos el select
     select.innerHTML = "<option value='0' selected='selected' disabled='disabled'>Seleccionar...</option>";
