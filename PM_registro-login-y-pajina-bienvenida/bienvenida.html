@@ -80,38 +80,38 @@
                     <div class="barra">
                         <div class="entrada">
                             <label for="nombres">Nombres:</label>
-                            <input type="text" name="nombres" class="input-text" id="nombres">
+                            <input type="text" name="nombres" class="input-text" id="nuevosNombres">
                         </div>
 
                         <div class="entrada">
                             <label for="apellidos">Apellidos:</label>
-                            <input type="text" name="apellidos" class="input-text" id="apellidos">
+                            <input type="text" name="apellidos" class="input-text" id="nuevosApellidos">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="email">Email:</label>
-                            <input type="email" name="email" class="input-text" id="email">
+                            <input type="email" name="email" class="input-text" id="nuevoEmail">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="password">Nueva Contraseña:</label>
-                            <input type="password" name="password" class="input-text input-mediano" id="password">
+                            <input type="password" name="password" class="input-text input-mediano" id="nuevoPassword">
                         </div>
 
                         <div class="entrada">
                             <label for="password2">Repetir Contraseña:</label>
-                            <input type="password" name="password2" class="input-text input-mediano" id="password2">
+                            <input type="password" name="password2" class="input-text input-mediano" id="nevoPassword2">
                         </div>
                     </div>
 
                     <div class="barra">
                         <div class="entrada">
                             <label for="direccion">Dirección:</label>
-                            <input type="text" name="direccion" class="input-text" id="direccion">
+                            <input type="text" name="direccion" class="input-text" id="nuevaDireccion">
                         </div>
                     </div>
 
@@ -120,15 +120,15 @@
 
                         <div class="inputs-radio">
                             <div class="input-radio">
-                                <input type="radio" name="sexo" id="mujer" value="mujer"> <label for="mujer">mujer</label>
+                                <input type="radio" name="sexo" value="mujer" id="mujer"> <label for="mujer">mujer</label>
                             </div>
 
                             <div class="input-radio">
-                                <input type="radio" name="sexo" id="hombre" value="hombre"> <label for="hombre">hombre</label>
+                                <input type="radio" name="sexo" value="hombre" id="hombre"> <label for="hombre">hombre</label>
                             </div>
 
                             <div class="input-radio">
-                                <input type="radio" name="sexo" id="otro" value="otro"> <label for="otro">otro</label>
+                                <input type="radio" name="sexo" value="otro" id="otro"> <label for="otro">otro</label>
                             </div>
                         </div>
                     </div>
@@ -137,19 +137,19 @@
                         <div class="entrada">
                             <label for="pais">Pais:</label>
 
-                            <select name="pais" id="pais" onchange="paisSeleccionado(this.value)" class="input-text">
-                                <option value="0" selected='selected' disabled='disabled'>Seleccionar...</option>
-                                <option value="argentina">Argentina</option>
-                                <option value="brasil">Brasil</option>
-                                <option value="colombia">Colombia</option>
-                                <option value="mexico">Mexico</option>
+                            <select name="pais" id="nuevoPais" onchange="paisSeleccionado(this.value)" class="input-text">
+                                <option value="Seleccionar" selected='selected' disabled='disabled'>Seleccionar...</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Mexico">Mexico</option>
                             </select>
                         </div>
 
                         <div class="entrada">
                             <label for="ciudad">Ciudades:</label>
 
-                            <select name="ciudad" id="ciudad" class="input-text">
+                            <select name="ciudad" id="nuevaCiudad" class="input-text">
                                 <option value="0" selected='selected' disabled='disabled'>Seleccionar...</option>
                             </select>
                         </div>
@@ -187,6 +187,7 @@
         </section>
     </main>
 
+    <script src="js/registro.js"></script>
     <script src="js/inicio.js"></script>
 </body>
 

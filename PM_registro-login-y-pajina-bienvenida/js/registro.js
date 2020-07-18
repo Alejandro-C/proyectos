@@ -1,8 +1,12 @@
-document.getElementById('formRegistro').addEventListener('submit', (e) => {
+var idFormulario = 'formRegistro';
+
+if (document.getElementById('nuevosDatosPersonales')) idFormulario = 'nuevosDatosPersonales';
+
+document.getElementById(idFormulario).addEventListener('submit', (e) => {
     e.preventDefault();
 
     // obteniendo datos del formulario
-    let form = new FormData(document.getElementById('formRegistro'));
+    let form = new FormData(document.getElementById(idFormulario));
     let usuario = Object.fromEntries(form);
     let usuarios = [];
     let id = 0;

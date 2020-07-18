@@ -204,6 +204,7 @@ div.contenedor-tabla table {
 div.contenedor-tabla table th,
 div.contenedor-tabla table td {
     padding: 8px;
+    text-transform: capitalize;
 }
 
 div.contenedor-tabla table th {
