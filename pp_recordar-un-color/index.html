@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordar un color</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="botones">
+            <input type="button" class="boton btn-amarillo" id="btnAmarillo" onclick="colorear(this.value)" value="Amarillo">
+            <input type="button" class="boton btn-rojo" id="btnRojo" onclick="colorear(this.value)" value="Rojo">
+            <input type="button" class="boton btn-verde" id="btnVerde" onclick="colorear(this.value)" value="Verde">
+            <input type="button" class="boton btn-azul" id="btnAzul" onclick="colorear(this.value)" value="Azul">
+        </div>
+
+        <div class="cuadro" id="cuadro"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
