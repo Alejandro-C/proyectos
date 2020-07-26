@@ -6,8 +6,6 @@ PP_: Proyecto Pequeño
   
   
 PM_: Proyecto Mediano
-
-  *login-y-registro
   
   *sistema-de-administrador-de-productos
   
