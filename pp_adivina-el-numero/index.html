@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el numero</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <h1>Adivina el Número</h1>
+        </header>
+
+        <main>
+            <p>El sistema ha generado un número del 1 al 100. <br> seras capas de adivinar cual es el numero en menos de 5 intentos?</p>
+
+            <form action="#" id="formJuego">
+                <div id="display">
+                    <p>Tienes <span id="intentos">5</span> intentos.</p>
+
+                    <div class="inputs">
+                        <input required type="number" name="numero" id="numero">
+                        <input type="submit" value="Adivinar">
+                    </div>
+                </div>
+
+                <p class="mensaje" id="mensajeNumAlto">El numero que digitaste muy alto.</p>
+                <p class="mensaje" id="mensajeNumBajo">El numero que digitaste muy bajo.</p>
+                <p class="mensaje" id="mensajeGano">Bien!! lo adivinaste en <span id="numeroIntentos">0</span> intentos.</p>
+                <p class="mensaje" id="mensajePerdio">Que mal.. no lo adivinaste <br> prueba de nuevo.</p>
+            </form>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

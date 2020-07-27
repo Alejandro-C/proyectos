@@ -2,8 +2,6 @@ PP_: Proyecto Pequeño
   
   *crear-una-nueva-fila-a-una-tabla-y-poder-colorearla
   
-  *adivina-el-numero
-  
   
 PM_: Proyecto Mediano
   
