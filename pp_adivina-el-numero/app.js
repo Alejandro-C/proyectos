@@ -6,7 +6,6 @@ const mensajeDePerdio = document.getElementById('mensajePerdio');
 
 let intentos = document.getElementById('intentos');
 let contadorIntentos = 5;
-console.log(numeroGenerado);
 
 document.getElementById('formJuego').addEventListener('submit', (e) => {
     e.preventDefault();
