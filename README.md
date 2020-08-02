@@ -1,6 +1,6 @@
 PM_: Proyecto Mediano
   
-  *sistema-de-administrador-de-productos
+  *administrador-de-productos
   
   *calculadora-avanzada
   
