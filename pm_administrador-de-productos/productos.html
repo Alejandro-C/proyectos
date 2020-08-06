@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Productos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="filtro">
+            <div class="titulo">
+                <h1>Sistema de Adminstración de inventario de Productos</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="barra">
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html">Categorias</a>
+            <a href="productos.html">Productos</a>
+        </nav>
+    </div>
+
+    <div class="contenedor-body">
+        <h2>Productos</h2>
+
+        <form>
+            <label for="codigo">Código:</label>
+            <input type="text" name="codigo" id="codigo">
+
+            <label for="descripcion">Descripción:</label>
+            <input type="text" name="descripcion" id="descripcion">
+
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="seleccionar" selected='selected' disabled='disabled'>Seleccionar</option>
+                <option value="cate">categoria1</option>
+                <option value="cate">categoria2</option>
+                <option value="cate">categoria3</option>
+            </select>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" name="cantidad" id="cantidad">
+
+            <label for="precio">Precio:</label>
+            <input type="number" name="precio" id="precio">
+
+            <input type="submit" value="Guardar">
+        </form>
+
+        <table>
+            <thead>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Categoria</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+            </thead>
+
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <p>Hecho por Ever Carvajal &copy; 2020</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -9,16 +9,134 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="filtro">
             <div class="titulo">
-                <h1>Sistema de Adminstración <br> de Productos</h1>
+                <h1>Sistema de Adminstración de inventario de Productos</h1>
             </div>
         </div>
     </header>
 
-    <div class="contenedor-body">
+    <div class="barra">
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html">Categorias</a>
+            <a href="productos.html">Productos</a>
+        </nav>
+    </div>
 
+    <div class="contenedor-body">
+        <section class="contenedor-targeta">
+            <header>
+                <h2>Descripción General</h2>
+            </header>
+
+            <div class="contenido-targeta">
+                <ul>
+                    <li>El sistema esta pensado para la administración de un inventario de productos.</li>
+                    <li>El sistema hace uso del localStorage del navegador.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contenedor-targeta">
+            <header>
+                <h2>Administración de categorías</h2>
+            </header>
+
+            <div class="contenido-targeta">
+                <ul>
+                    <li>Descripción del formulario.
+                        <table>
+                            <thead>
+                                <th>Campo</th>
+                                <th>Tipo</th>
+                                <th>Validación</th>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Código</td>
+                                    <td>Input-text</td>
+                                    <td>Maximo 10 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Descripción</td>
+                                    <td>Input-text</td>
+                                    <td>Maximo 50 caracteres</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>Los campos de código y descripcion son obligatorios.</li>
+                    <li>El sistema no permite el registro de categorías existentes.</li>
+                    <li>Boton "Guardar": guarda la categoria que se esta creando.</li>
+                    <li>Boton "Listar": muestra en una tabla todas las categorias que se han creado.</li>
+                    <li>Se puede eliminar una fila seleccionandola y presionando la tecla 'suprimir'.</li>
+                    <li>El sistema no permite eliminar una categoria si esta ya esta relacionada con un producto.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contenedor-targeta">
+            <header>
+                <h2>Administración de Productos</h2>
+            </header>
+
+            <div class="contenido-targeta">
+                <ul>
+                    <li>Descripción del formulario.
+                        <table>
+                            <thead>
+                                <th>Campo</th>
+                                <th>Tipo</th>
+                                <th>Validación</th>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Codigo</td>
+                                    <td>Input-text</td>
+                                    <td>Maximo 10 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Descripción</td>
+                                    <td>Input-text</td>
+                                    <td>Maximo 50 caracteres</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Categoria</td>
+                                    <td>Select</td>
+                                    <td>Minimo 4 opciones</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cantidad</td>
+                                    <td>Input-numero</td>
+                                    <td>Solo numeros</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Precio</td>
+                                    <td>Input-numero</td>
+                                    <td>Solo numeros</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </li>
+                    <li>En el formulario de registro de productos se puede relacionar el producto con las categorías creadas previamente en un campo select.</li>
+                    <li>El sistema no se permite el registro de productos con el mismo código o con la misma descripción.</li>
+                    <li>Boton "Guardar": guarda el producto que se esta creando.</li>
+                    <li>Boton "Listar": muestra en una tabla todas los productos que se han creado.</li>
+                    <li>Boton "Editar": muestra un formulario previamente llenado con los datos del producto que se piensa editar.</li>
+                    <li>Boton "Borrar": borra un producto.</li>
+                    <li>Boton "Borrar Todo": borra todos los productos.</li>
+                </ul>
+            </div>
+        </section>
     </div>
 
     <footer class="footer">

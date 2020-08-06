@@ -22,16 +22,38 @@ body {
 /* GLOBALES */
 
 
+/* tabla */
+
+table,
+td,
+th {
+    border: 1px solid #111111;
+}
+
+table {
+    width: 98%;
+    border-collapse: collapse;
+}
+
+table th {
+    padding: 5px;
+}
+
+table td {
+    padding: 2px 5px;
+}
+
+
 /* HEADER */
 
-header {
+header.header {
     background-image: url(../img/fondo-header.webp);
     background-size: cover;
     background-attachment: fixed;
     height: 500px;
 }
 
-header div.filtro {
+header.header div.filtro {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .5);
@@ -40,11 +62,42 @@ header div.filtro {
     align-items: center;
 }
 
-header h1 {
+header.header h1 {
     font-size: 70px;
     text-shadow: 0 0 10px #111111;
     color: #ffffff;
     text-align: center;
+    text-transform: capitalize;
+}
+
+
+/* BARRA */
+
+div.barra {
+    margin: 0 auto 10px;
+    background-color: #F25C05;
+    box-shadow: 0 5px 5px #aaaaaa;
+}
+
+div.barra nav.nav {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+div.barra nav.nav a {
+    padding: 15px;
+    color: #ffffff;
+    transition: all .3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+div.barra nav.nav a:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+a.select {
+    border-bottom: 5px solid #ffffff;
 }
 
 
@@ -54,8 +107,34 @@ div.contenedor-body {
     width: 1200px;
     min-height: 500px;
     margin: 0 auto;
-    box-shadow: 0 0 10px #888888;
+    padding: 10px 0;
+    box-shadow: 0 0 10px #aaaaaa;
     background-color: #ffffff;
+}
+
+section.contenedor-targeta {
+    width: 95%;
+    margin: 0 auto 15px;
+    box-shadow: 0 1px 2px #888888;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+section.contenedor-targeta header {
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    color: #ffffff;
+    background-color: #F25C05;
+    text-transform: capitalize;
+}
+
+section.contenedor-targeta div.contenido-targeta {
+    padding-bottom: 5px;
+}
+
+section.contenedor-targeta div.contenido-targeta ul li {
+    margin-left: 25px;
+    padding-bottom: 4px;
 }
 
 
