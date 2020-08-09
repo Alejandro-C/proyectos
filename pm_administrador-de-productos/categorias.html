@@ -9,43 +9,59 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="filtro">
-            <div class="titulo">
-                <h1>Sistema de Adminstración de inventario de Productos</h1>
-            </div>
-        </div>
-    </header>
-
     <div class="barra">
         <nav class="nav">
             <a href="index.html">Inicio</a>
-            <a href="categorias.html">Categorias</a>
+            <a href="categorias.html">Categorías</a>
             <a href="productos.html">Productos</a>
         </nav>
     </div>
 
     <div class="contenedor-body">
-        <h2>Categorias</h2>
+        <section class="section">
+            <h2>Registro de Categorías</h2>
 
-        <form>
-            <label for="codigo">Código:</label>
-            <input type="text" name="codigo" id="codigo">
+            <form class="formulario">
+                <div class="columnas">
+                    <div class="entrada-form">
+                        <label for="codigo">Código:</label>
+                        <input type="text" name="codigo" id="codigo">
+                    </div>
 
-            <label for="descripcion">Descripción:</label>
-            <input type="text" name="descripcion" id="descripcion">
+                    <div class="entrada-form">
+                        <label for="descripcion">Descripción:</label>
+                        <input type="text" name="descripcion" id="descripcion">
+                    </div>
+                </div>
 
-            <input type="submit" value="Guardar">
-        </form>
+                <div class="botones">
+                    <input type="submit" value="Guardar">
+                    <input type="submit" value="Listar Categorias">
+                </div>
+            </form>
+        </section>
 
-        <table>
-            <thead>
-                <th>Código</th>
-                <th>Descripción</th>
-            </thead>
+        <section class="section">
+            <h2>Categorías Registradas</h2>
 
-            <tbody></tbody>
-        </table>
+            <table>
+                <thead>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Enlatados</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Carnes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 
     <footer class="footer">

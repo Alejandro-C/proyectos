@@ -9,60 +9,92 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="filtro">
-            <div class="titulo">
-                <h1>Sistema de Adminstración de inventario de Productos</h1>
-            </div>
-        </div>
-    </header>
-
     <div class="barra">
         <nav class="nav">
             <a href="index.html">Inicio</a>
-            <a href="categorias.html">Categorias</a>
+            <a href="categorias.html">Categorías</a>
             <a href="productos.html">Productos</a>
         </nav>
     </div>
 
     <div class="contenedor-body">
-        <h2>Productos</h2>
+        <section class="section">
+            <h2>Registro de Productos</h2>
 
-        <form>
-            <label for="codigo">Código:</label>
-            <input type="text" name="codigo" id="codigo">
+            <form class="formulario">
+                <div class="columnas">
+                    <div class="entrada-form">
+                        <label for="codigo">Código:</label>
+                        <input type="text" name="codigo" id="codigo">
+                    </div>
 
-            <label for="descripcion">Descripción:</label>
-            <input type="text" name="descripcion" id="descripcion">
+                    <div class="entrada-form">
+                        <label for="descripcion">Descripción:</label>
+                        <input type="text" name="descripcion" id="descripcion">
+                    </div>
+                </div>
 
-            <label for="categoria">Categoria:</label>
-            <select name="categoria" id="categoria">
-                <option value="seleccionar" selected='selected' disabled='disabled'>Seleccionar</option>
-                <option value="cate">categoria1</option>
-                <option value="cate">categoria2</option>
-                <option value="cate">categoria3</option>
-            </select>
+                <div class="columnas">
+                    <div class="entrada-form">
+                        <label for="categoria">Categoria:</label>
+                        <select name="categoria" id="categoria">
+                            <option value="seleccionar" selected='selected' disabled='disabled'>Seleccionar</option>
+                            <option value="cate">categoria1</option>
+                            <option value="cate">categoria2</option>
+                            <option value="cate">categoria3</option>
+                        </select>
+                    </div>
 
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" name="cantidad" id="cantidad">
+                    <div class="entrada-form">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" name="cantidad" id="cantidad">
+                    </div>
+                </div>
 
-            <label for="precio">Precio:</label>
-            <input type="number" name="precio" id="precio">
+                <div class="media-columna">
+                    <div class="entrada-form width-50">
+                        <label for="precio">Precio:</label>
+                        <input type="text" name="precio" id="precio">
+                    </div>
 
-            <input type="submit" value="Guardar">
-        </form>
+                    <div class="botones">
+                        <input type="submit" value="Guardar">
+                        <input type="submit" value="Listar Productos">
+                    </div>
+                </div>
+            </form>
+        </section>
 
-        <table>
-            <thead>
-                <th>Código</th>
-                <th>Descripción</th>
-                <th>Categoria</th>
-                <th>Cantidad</th>
-                <th>Precio</th>
-            </thead>
+        <section class="section">
+            <h2>Productos Registrados</h2>
 
-            <tbody></tbody>
-        </table>
+            <table>
+                <thead>
+                    <th>Código</th>
+                    <th>Descripción</th>
+                    <th>Categoria</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="centrar">001</td>
+                        <td>Atun</td>
+                        <td>Enlatados</td>
+                        <td class="centrar">5</td>
+                        <td class="centrar">3500</td>
+                    </tr>
+                    <tr>
+                        <td class="centrar">001</td>
+                        <td>Atun</td>
+                        <td>Enlatados</td>
+                        <td class="centrar">5</td>
+                        <td class="centrar">3500</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </div>
 
     <footer class="footer">
