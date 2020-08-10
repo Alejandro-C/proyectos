@@ -21,27 +21,27 @@
         <section class="section">
             <h2>Registro de Categorías</h2>
 
-            <form class="formulario">
+            <form class="formulario" id="formCategoria">
                 <div class="columnas">
                     <div class="entrada-form">
                         <label for="codigo">Código:</label>
-                        <input type="text" name="codigo" id="codigo">
+                        <input type="text" name="codigo" id="codigo" required>
                     </div>
 
                     <div class="entrada-form">
                         <label for="descripcion">Descripción:</label>
-                        <input type="text" name="descripcion" id="descripcion">
+                        <input type="text" name="descripcion" id="descripcion" required>
                     </div>
                 </div>
 
                 <div class="botones">
                     <input type="submit" value="Guardar">
-                    <input type="submit" value="Listar Categorias">
+                    <input type="button" value="Listar Categorias" onclick="mostrarRegistros();">
                 </div>
             </form>
         </section>
 
-        <section class="section">
+        <section class="section" id="sectionTabla">
             <h2>Categorías Registradas</h2>
 
             <table>
@@ -77,7 +77,8 @@
         <p>Hecho por Ever Carvajal &copy; 2020</p>
     </footer>
 
-    <script src="js/app.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/formCategoria.js"></script>
 </body>
 
 </html>

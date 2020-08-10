@@ -1,0 +1,1 @@
+function mostrarRegistros() { document.getElementById('sectionTabla').style.display = 'none'; }
