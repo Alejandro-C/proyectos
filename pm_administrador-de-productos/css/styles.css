@@ -109,7 +109,7 @@ a.select {
 
 div.contenedor-body {
     width: 1200px;
-    min-height: 595.6px;
+    min-height: 597px;
     margin: 0 auto;
     padding: 10px 0;
     box-shadow: 0 0 10px #aaaaaa;
@@ -154,12 +154,10 @@ section.section h2 {
 form.formulario {
     width: 80%;
     margin: 0 auto;
-    /* border: 1px solid #F25C05; */
 }
 
 div.entrada-form {
     width: 100%;
-    /* border: 1px solid blue; */
     display: flex;
     align-items: center;
 }
@@ -213,6 +211,19 @@ form.formulario div.botones input {
 
 form.formulario div.botones input:hover {
     background-color: #f25c05e7;
+}
+
+section.section table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+section.section td.acciones {
+    text-align: center;
+}
+
+section.section td.acciones a {
+    margin: 0 3px;
 }
 
 
