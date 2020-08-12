@@ -1,6 +1,11 @@
-function mostrarRegistros() {
-    // seleccionando el elemento que contiene la tabla con los registros
-    document.getElementById('sectionTabla').style.display = 'none';
+function mostrarOcultarRegistros(accion = '') {
+    if (accion == 'mostrar') {
+        document.getElementById('sectionForm').style.display = 'none';
+        document.getElementById('sectionTabla').style.display = 'block';
+    } else {
+        document.getElementById('sectionForm').style.display = 'block';
+        document.getElementById('sectionTabla').style.display = 'none';
+    }
 }
 
 function categoriasGuardadas() {

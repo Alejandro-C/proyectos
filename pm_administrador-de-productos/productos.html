@@ -18,7 +18,7 @@
     </div>
 
     <div class="contenedor-body">
-        <section class="section">
+        <section class="section" id="sectionForm">
             <h2>Registro de Productos</h2>
 
             <form class="formulario">
@@ -59,7 +59,7 @@
 
                     <div class="botones">
                         <input type="submit" value="Guardar">
-                        <input type="button" value="Listar Categorias" onclick="mostrarRegistros();">
+                        <input type="button" value="Listar Productos" onclick="mostrarOcultarRegistros('mostrar');">
                     </div>
                 </div>
             </form>
@@ -103,6 +103,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="botones width-90">
+                <input type="button" value="Eliminar Todo">
+                <input type="button" value="Nuevo Producto" onclick="mostrarOcultarRegistros();">
+            </div>
         </section>
     </div>
 

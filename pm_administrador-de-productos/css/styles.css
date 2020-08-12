@@ -47,6 +47,15 @@ table td {
     text-align: center;
 }
 
+.fondo {
+    background-color: #F25C05;
+    color: #ffffff;
+}
+
+.width-90 {
+    width: 95%;
+}
+
 
 /* HEADER */
 
@@ -72,6 +81,11 @@ header.header h1 {
     color: #ffffff;
     text-align: center;
     text-transform: capitalize;
+}
+
+header.header-h2 {
+    padding: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -111,7 +125,7 @@ div.contenedor-body {
     width: 1200px;
     min-height: 597px;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 0 0 10px;
     box-shadow: 0 0 10px #aaaaaa;
     background-color: #ffffff;
 }
@@ -194,12 +208,12 @@ form.formulario div.media-columna div.width-50 {
     width: 49.5%;
 }
 
-form.formulario div.botones {
+div.botones {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
-form.formulario div.botones input {
+div.botones input {
     margin: 10px 5px;
     padding: 10px 5px;
     transition: all .3s ease;
@@ -234,4 +248,8 @@ footer {
     color: #ffffff;
     background-color: #333333;
     text-align: center;
+}
+
+#sectionTabla {
+    display: none;
 }

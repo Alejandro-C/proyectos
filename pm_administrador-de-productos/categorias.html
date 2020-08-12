@@ -18,25 +18,29 @@
     </div>
 
     <div class="contenedor-body">
-        <section class="section">
+        <header class="header-h2 fondo centrar">
+            <h2>CATEGORÍAS</h2>
+        </header>
+
+        <section class="section" id="sectionForm">
             <h2>Registro de Categorías</h2>
 
             <form class="formulario" id="formCategoria">
                 <div class="columnas">
                     <div class="entrada-form">
                         <label for="codigo">Código:</label>
-                        <input type="text" name="codigo" id="codigo" required>
+                        <input type="text" name="codigo" id="codigo" required maxlength="10">
                     </div>
 
                     <div class="entrada-form">
                         <label for="descripcion">Descripción:</label>
-                        <input type="text" name="descripcion" id="descripcion" required>
+                        <input type="text" name="descripcion" id="descripcion" required maxlength="50">
                     </div>
                 </div>
 
                 <div class="botones">
                     <input type="submit" value="Guardar">
-                    <input type="button" value="Listar Categorias" onclick="mostrarRegistros();">
+                    <input type="button" value="Listar Categorias" onclick="mostrarOcultarRegistros('mostrar');">
                 </div>
             </form>
         </section>
@@ -70,6 +74,11 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="botones width-90">
+                <input type="button" value="Eliminar Todo">
+                <input type="button" value="Nueva Categoria" onclick="mostrarOcultarRegistros();">
+            </div>
         </section>
     </div>
 
