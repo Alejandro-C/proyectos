@@ -51,6 +51,8 @@ function llenarTablaCategorias() {
     let categorias = categoriasGuardadas();
     let tbody = document.getElementById('tbodyCategorias');
 
+    tbody.innerHTML = '';
+
     for (let i = 0; i < categorias.length; i++) {
         let tr = document.createElement('tr');
         let tdNumero = document.createElement('td');
@@ -80,4 +82,9 @@ function llenarTablaCategorias() {
         tr.appendChild(tdAcciones);
         tbody.appendChild(tr);
     }
+}
+
+function eliminarTodoRegistros(nombre) {
+    localStorage.removeItem(nombre);
+    location.reload();
 }
