@@ -21,6 +21,9 @@ document.getElementById('formCategoria').addEventListener('submit', (e) => {
 
     // GUARDANDO EN EL LOCALSTORAGE LAS CATEGORIAS
     localStorage.setItem('categorias', JSON.stringify(categorias));
+
+    // AGREGANDO LA CATEGORIA CREADA A LA TABLA DE REGISTROS
+    llenarTablaCategorias();
 });
 
 // LINEA 8:

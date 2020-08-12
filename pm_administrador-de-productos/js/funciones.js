@@ -1,4 +1,6 @@
 function mostrarOcultarRegistros(accion = '') {
+    llenarTablaCategorias();
+
     if (accion == 'mostrar') {
         document.getElementById('sectionForm').style.display = 'none';
         document.getElementById('sectionTabla').style.display = 'block';
@@ -43,4 +45,39 @@ function existeCategoria(categoria) {
     }
 
     return false;
+}
+
+function llenarTablaCategorias() {
+    let categorias = categoriasGuardadas();
+    let tbody = document.getElementById('tbodyCategorias');
+
+    for (let i = 0; i < categorias.length; i++) {
+        let tr = document.createElement('tr');
+        let tdNumero = document.createElement('td');
+        let tdCodigo = document.createElement('td');
+        let tdDescripcion = document.createElement('td');
+        let tdAcciones = document.createElement('td');
+        let accionEliminar = document.createElement('a');
+        let accionEditar = document.createElement('a');
+
+        tdNumero.setAttribute('class', 'centrar');
+        tdCodigo.setAttribute('class', 'centrar');
+        tdAcciones.setAttribute('class', 'acciones');
+        accionEliminar.setAttribute('href', '#');
+        accionEditar.setAttribute('href', '#');
+
+        tdNumero.innerHTML = categorias[i].id + 1;
+        tdCodigo.innerHTML = categorias[i].codigo;
+        tdDescripcion.innerHTML = categorias[i].descripcion;
+        accionEliminar.innerHTML = 'Eliminar';
+        accionEditar.innerHTML = 'Editar';
+
+        tdAcciones.appendChild(accionEliminar);
+        tdAcciones.appendChild(accionEditar);
+        tr.appendChild(tdNumero);
+        tr.appendChild(tdCodigo);
+        tr.appendChild(tdDescripcion);
+        tr.appendChild(tdAcciones);
+        tbody.appendChild(tr);
+    }
 }
