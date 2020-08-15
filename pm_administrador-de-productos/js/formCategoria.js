@@ -2,7 +2,7 @@ document.getElementById('formCategoria').addEventListener('submit', (e) => {
     e.preventDefault();
 
     let categorias = categoriasGuardadas();
-    let id = categorias.length;
+    let id = asignarId(categorias);
 
     // OBTENIEDO LOS VALORES DEL FORMULARIO
     let datosFormulario = new FormData(document.getElementById('formCategoria'));
@@ -24,6 +24,10 @@ document.getElementById('formCategoria').addEventListener('submit', (e) => {
 
     // AGREGANDO LA CATEGORIA CREADA A LA TABLA DE REGISTROS
     llenarTablaCategorias();
+    alert('La categorias se guardo con exito');
+
+    // REFRESCANDO LA PAJINA
+    location.reload();
 });
 
 // LINEA 8:

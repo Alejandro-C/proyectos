@@ -1,5 +1,20 @@
-function mostrarOcultarRegistros(accion = '') {
-    llenarTablaCategorias();
+function mostrarOcultarRegistros(referencia, accion = '') {
+    if (referencia == 'categorias') {
+        if (localStorage.getItem('categorias')) {
+            llenarTablaCategorias();
+        } else {
+            alert('No hay categorias registradas');
+            return;
+        }
+    } else {
+        console.log('para cuando trabajemos con productos');
+        // if (localStorage.getItem('categorias')) {
+        //     llenarTablaCategorias();
+        // } else {
+        //     alert('No hay categorias registradas');
+        //     return;
+        // }
+    }
 
     if (accion == 'mostrar') {
         document.getElementById('sectionForm').style.display = 'none';
@@ -22,6 +37,11 @@ function categoriasGuardadas() {
     return categorias;
 }
 
+function asignarId(array) {
+    let id = array.length == 0 ? 0 : array[array.length - 1].id + 1;
+    return id;
+}
+
 function existeCategoria(categoria) {
     // validando si hay categorias registradas
     if (localStorage.getItem('categorias')) {
@@ -40,8 +60,6 @@ function existeCategoria(categoria) {
                 return true;
             }
         }
-
-
     }
 
     return false;
@@ -54,6 +72,7 @@ function llenarTablaCategorias() {
     tbody.innerHTML = '';
 
     for (let i = 0; i < categorias.length; i++) {
+        // creando los elementos HTML
         let tr = document.createElement('tr');
         let tdNumero = document.createElement('td');
         let tdCodigo = document.createElement('td');
@@ -62,18 +81,22 @@ function llenarTablaCategorias() {
         let accionEliminar = document.createElement('a');
         let accionEditar = document.createElement('a');
 
+        // dandole los atributos necesarios
         tdNumero.setAttribute('class', 'centrar');
         tdCodigo.setAttribute('class', 'centrar');
         tdAcciones.setAttribute('class', 'acciones');
         accionEliminar.setAttribute('href', '#');
         accionEditar.setAttribute('href', '#');
+        accionEliminar.setAttribute('onclick', `eliminarRegistro(${categorias[i].id}, 'categorias')`)
 
-        tdNumero.innerHTML = categorias[i].id + 1;
+        // dandole un valor que se va a mostrar en la tabla
+        tdNumero.innerHTML = i + 1;
         tdCodigo.innerHTML = categorias[i].codigo;
         tdDescripcion.innerHTML = categorias[i].descripcion;
         accionEliminar.innerHTML = 'Eliminar';
         accionEditar.innerHTML = 'Editar';
 
+        // añadiendo los elementos hijos a sus respectivos elementos padres
         tdAcciones.appendChild(accionEliminar);
         tdAcciones.appendChild(accionEditar);
         tr.appendChild(tdNumero);
@@ -87,4 +110,19 @@ function llenarTablaCategorias() {
 function eliminarTodoRegistros(nombre) {
     localStorage.removeItem(nombre);
     location.reload();
+}
+
+function eliminarRegistro(id, referencia) {
+    let registros = JSON.parse(localStorage.getItem(referencia));
+    let registrosAguardar;
+
+    if (registros.length > 1) {
+        registrosAguardar = registros.filter((value) => { return value.id != id; });
+        localStorage.setItem(referencia, JSON.stringify(registrosAguardar));
+    } else {
+        localStorage.removeItem(referencia);
+        return location.reload();
+    }
+
+    if (referencia == 'categorias') mostrarOcultarRegistros('categorias', 'mostrar');
 }
