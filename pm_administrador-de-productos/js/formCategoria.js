@@ -8,16 +8,30 @@ document.getElementById('formCategoria').addEventListener('submit', (e) => {
     let datosFormulario = new FormData(document.getElementById('formCategoria'));
     let categoria = Object.fromEntries(datosFormulario);
 
-    // VALIDANDO SI YA EXISTE LA CATEGORIA QUE SE QUIERE CREAR
-    if (existeCategoria(categoria)) return;
+    // VALIDANDO SI ES UNA CATEGORIA QUE SE ESTA EDITANDO
+    if (localStorage.getItem('id_categoria_editar')) {
+        let index = indexCategoriaEditando();
 
-    // AÑADIENDOLE OTROS ATRIBUTOS
-    categoria.id = id;
-    categoria.relacionada = false;
-    categoria.editar = false;
+        // VALIDANDO QUE LA CATEGORIA NO SE REPITA
+        if (existeCategoria(categoria, categorias[index].codigo, categorias[index].descripcion)) return;
 
-    // GUARDANDO LA NUEVA CATEGORIA EN EL ARRAY CATEGORIAS
-    categorias.push(categoria);
+        // MODIFICANDO LA CATEGORIA
+        categorias[index].codigo = categoria.codigo;
+        categorias[index].descripcion = categoria.descripcion;
+
+        // ELIMINANDO EL ID DEL LOCALSTRORAGE
+        localStorage.removeItem('id_categoria_editar');
+    } else {
+        // VALIDANDO SI YA EXISTE LA CATEGORIA QUE SE QUIERE CREAR
+        if (existeCategoria(categoria)) return;
+
+        // AÑADIENDOLE OTROS ATRIBUTOS
+        categoria.id = id;
+        categoria.relacionada = false;
+
+        // GUARDANDO LA NUEVA CATEGORIA EN EL ARRAY CATEGORIAS
+        categorias.push(categoria);
+    }
 
     // GUARDANDO EN EL LOCALSTORAGE LAS CATEGORIAS
     localStorage.setItem('categorias', JSON.stringify(categorias));

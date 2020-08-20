@@ -38,17 +38,19 @@ function categoriasGuardadas() {
 }
 
 function asignarId(array) {
-    let id = array.length == 0 ? 0 : array[array.length - 1].id + 1;
+    let id = array.length == 0 ? 1 : array[array.length - 1].id + 1;
     return id;
 }
 
-function existeCategoria(categoria) {
+function existeCategoria(categoria, codigoEditar, descEditar) {
     // validando si hay categorias registradas
     if (localStorage.getItem('categorias')) {
         let categorias = JSON.parse(localStorage.getItem('categorias'));
 
         // validando los posibles casos para no registrar la categoria
         for (let i = 0; i < categorias.length; i++) {
+            if (categorias[i].codigo == codigoEditar || categorias[i].descripcion == descEditar) continue;
+
             if (categorias[i].codigo == categoria.codigo && categorias[i].descripcion == categoria.descripcion) {
                 alert('Esta categoria ya se encuentra registrada');
                 return true;
@@ -87,7 +89,8 @@ function llenarTablaCategorias() {
         tdAcciones.setAttribute('class', 'acciones');
         accionEliminar.setAttribute('href', '#');
         accionEditar.setAttribute('href', '#');
-        accionEliminar.setAttribute('onclick', `eliminarRegistro(${categorias[i].id}, 'categorias')`)
+        accionEliminar.setAttribute('onclick', `eliminarRegistro(${categorias[i].id}, 'categorias')`);
+        accionEditar.setAttribute('onclick', `editarCategoria(${categorias[i].id})`);
 
         // dandole un valor que se va a mostrar en la tabla
         tdNumero.innerHTML = i + 1;
@@ -117,7 +120,7 @@ function eliminarRegistro(id, referencia) {
     let registrosAguardar;
 
     if (registros.length > 1) {
-        registrosAguardar = registros.filter((value) => { return value.id != id; });
+        registrosAguardar = registros.filter((value) => value.id != id);
         localStorage.setItem(referencia, JSON.stringify(registrosAguardar));
     } else {
         localStorage.removeItem(referencia);
@@ -125,4 +128,35 @@ function eliminarRegistro(id, referencia) {
     }
 
     if (referencia == 'categorias') mostrarOcultarRegistros('categorias', 'mostrar');
+}
+
+function editarCategoria(id) {
+    let categorias = categoriasGuardadas();
+
+    for (let i = 0; i < categorias.length; i++) {
+        if (categorias[i].id == id) {
+            categorias[i].editar = true;
+            llenarFormularioCategoria(categorias[i].codigo, categorias[i].descripcion);
+        }
+    }
+
+    localStorage.setItem('categorias', JSON.stringify(categorias));
+    localStorage.setItem('id_categoria_editar', id);
+}
+
+function llenarFormularioCategoria(codigo, descripcion) {
+    mostrarOcultarRegistros('categorias', 'ocultar');
+    document.getElementById('codigo').value = codigo;
+    document.getElementById('descripcion').value = descripcion;
+}
+
+function indexCategoriaEditando() {
+    let idCategoria = localStorage.getItem('id_categoria_editar');
+    let categorias = categoriasGuardadas();
+
+    for (let i = 0; i < categorias.length; i++) {
+        if (categorias[i].id == idCategoria) return i;
+    }
+
+    return false;
 }
