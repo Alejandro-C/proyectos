@@ -160,3 +160,28 @@ function indexCategoriaEditando() {
 
     return false;
 }
+
+// FUNCIONES PARA LA PAJINA DE PRODUCTOS
+function llenarSelectCategorias() {
+    let categorias = JSON.parse(localStorage.getItem('categorias'));
+    let selectCategorias = document.getElementById('categoria');
+
+    selectCategorias.innerHTML = null;
+
+    let option = document.createElement('option');
+
+    option.setAttribute('selected', 'selected');
+    option.setAttribute('disabled', 'disabled');
+    option.innerHTML = 'Seleccionar...';
+
+    selectCategorias.appendChild(option);
+
+    for (let i = 0; i < categorias.length; i++) {
+        let optionCategoria = document.createElement('option');
+
+        optionCategoria.setAttribute('value', categorias[i].descripcion);
+        optionCategoria.innerHTML = categorias[i].descripcion;
+
+        selectCategorias.appendChild(optionCategoria);
+    }
+}
