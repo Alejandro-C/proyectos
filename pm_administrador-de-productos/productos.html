@@ -25,19 +25,19 @@
                 <div class="columnas">
                     <div class="entrada-form">
                         <label for="codigo">Código:</label>
-                        <input type="text" name="codigo" id="codigo">
+                        <input type="text" name="codigo" id="codigo" maxlength="10" required>
                     </div>
 
                     <div class="entrada-form">
                         <label for="descripcion">Descripción:</label>
-                        <input type="text" name="descripcion" id="descripcion">
+                        <input type="text" name="descripcion" id="descripcion" maxlength="50" required>
                     </div>
                 </div>
 
                 <div class="columnas">
                     <div class="entrada-form">
                         <label for="categoria">Categoria:</label>
-                        <select name="categoria" id="categoria">
+                        <select name="categoria" id="categoria" required>
                             <option value="seleccionar" selected='selected' disabled='disabled'>Seleccionar</option>
                             <option value="cate">categoria1</option>
                             <option value="cate">categoria2</option>
@@ -47,14 +47,14 @@
 
                     <div class="entrada-form">
                         <label for="cantidad">Cantidad:</label>
-                        <input type="number" name="cantidad" id="cantidad">
+                        <input type="number" name="cantidad" id="cantidad" min="0" required>
                     </div>
                 </div>
 
                 <div class="media-columna">
                     <div class="entrada-form width-50">
                         <label for="precio">Precio:</label>
-                        <input type="text" name="precio" id="precio">
+                        <input type="number" name="precio" id="precio" min="0" required>
                     </div>
 
                     <div class="botones">
