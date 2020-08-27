@@ -11,12 +11,20 @@ if (!localStorage.getItem('categorias') || JSON.parse(localStorage.getItem('cate
 document.getElementById('formProducto').addEventListener('submit', (e) => {
     e.preventDefault();
 
+    let productos = [];
+
+    // OBTENIEDO LOS VALORES DEL FORMULARIO
     let datosFormulario = new FormData(document.getElementById('formProducto'));
     let producto = Object.fromEntries(datosFormulario);
 
+    // VALIDANDO QUE SI SELECCIONO UNA CATEGORIA
     if (!producto.categoria) return alert("El campo 'categoria' es obligatorio");
 
-    console.log(producto);
+    // AÑADIENDO EL PRODUCTO AL ARREGLO DE PRODUCTOS
+    productos.push(producto);
 
-    console.log('guardado');
+    // GUARDANDO EN EL LOCALSTORAGE
+    localStorage.setItem('productos', JSON.stringify(productos));
+
+    return alert('Se guardo el nuevo producto');
 });
