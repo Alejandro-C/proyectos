@@ -7,7 +7,7 @@ Este programa muestra en pantalla un semaforo en el cual al pasar el puntero sob
 ## Explicacion del Codigo
 
 ### Documento HTML
-primero creamos la estructura basica de un documento HTML y la configuramos a nuestra preferencia.
+Primero creamos la estructura basica de un documento HTML y la configuramos a nuestra preferencia.
 
 ```
 <!DOCTYPE html>
@@ -35,19 +35,18 @@ Luego creamos un DIV contenedor y dentro creamos tres DIVs y les asignamos a cad
 </body>
 ```
 
-Ahora para darle estilo a nuestra estructura creamos un archivo CSS y lo referenciamos en nuestro documento HTML con la etiqueta <link> dentro de la etiqueta <head>. En nuetro caso el archivo CSS lo nombramos como "styles.css".
+Ahora para darle estilo a nuestra estructura creamos un archivo CSS y lo referenciamos en nuestro documento HTML con la etiqueta `<link>` dentro de la etiqueta `<head>`. En nuetro caso el archivo CSS lo nombramos como "styles.css".
 
 ```
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semaforo Sencilo</title>
-    <!-- poner en negrilla la etiqueta link -->
     <link rel="stylesheet" href="styles.css">
 </head>
 ```
 
-hata este momento si ejecutamos el programa no observaremos nada en pantalla ya que falta darle los estilos y eso lo haremos ahora.
+Hasta este momento si ejecutamos el programa no observaremos nada en pantalla ya que falta darle los estilos y eso lo haremos ahora.
 
 ### Documnto CSS
 
@@ -92,7 +91,7 @@ div.bombillo-verde {
     background-color: green;
 }
 ```
-Bien ahora que temos los estilos puestos si ejecutamos el programa vamos a observar nuestro semaforo pero por ahora no funciona, porlo que procederemos a darle vida a nuestro proyecto con JavaScript. Para referenciar un archivo JavaScrit utilizaremos la etiqueta <script> y lo pondremos al final antes de cerrar el elemnto </body>. en nuestro caso el documento JavaScript lo nombramos como "app.js".
+Bien ahora que temos los estilos puestos si ejecutamos el programa vamos a observar nuestro semaforo pero por ahora no funciona, porlo que procederemos a darle vida a nuestro proyecto con JavaScript. Para referenciar un archivo JavaScrit utilizaremos la etiqueta `<script>` y lo pondremos al final antes de cerrar el elemnto `</body>`. en nuestro caso el documento JavaScript lo nombramos como "app.js".
 
 ```
 <body>
@@ -106,9 +105,9 @@ Bien ahora que temos los estilos puestos si ejecutamos el programa vamos a obser
 </body>
 ```
 
-### Documnto JavasScript
+### Documento JavasScript
 
-primero vamos a seleccionar los tres elementos que corresponden a los bombillos, los vamos a seleccionar por su ID que se les asignó a cada uno.
+Primero vamos a seleccionar los tres elementos que corresponden a los bombillos, los vamos a seleccionar por su ID que se les asignó a cada uno.
 
 ```
 let bombilloRojo = document.getElementById('rojo');
@@ -116,7 +115,7 @@ let bombilloAmarillo = document.getElementById('amarillo');
 let bombilloVerde = document.getElementById('verde');
 ```
 
-la siguiente funcion es para resetar la iluminacion (apagar el bombillo)
+La siguiente funcion es para resetar la iluminación (apagar el bombillo)
 
 ```
 function off() {
@@ -124,11 +123,11 @@ function off() {
 }
 ```
 
-ahora usaremos un metodo para escuchar un evento en este caso el evento es "mouseover" para cuando el cursos este sobre un elemento y el evento "mouseout" que es para cuando el cuersor este fuera de un elemnto 
+Ahora usaremos un metodo para escuchar un evento en este caso el evento es "mouseover" para cuando el cursos este sobre un elemento y el evento "mouseout" que es para cuando el cuersor este fuera de un elemnto 
 
-para hacer el efecto de iluminacion de un bombillo usaremos el metodo "addEventListener" que resive dos parametros el primero es el nombre del evento y el segundo es la accion para cuando suceda el evento
+Para hacer el efecto de iluminacion de un bombillo usaremos el metodo "addEventListener" que resive dos parametros el primero es el nombre del evento y el segundo es la accion para cuando suceda el evento
 
-linea de codigo para encender un bombillo:
+Linea de codigo para encender un bombillo:
 
 ```
 bombilloRojo.addEventListener('mouseover', () => bombilloRojo.style.boxShadow = "0 0 30px red");
